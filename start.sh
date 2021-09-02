@@ -51,6 +51,7 @@ rm -f "${PATHSET}/PEASS/README.md"
 rm -r -f "${PATHSET}/PEASS/linPEAS/builder"
 rm -r -f "${PATHSET}/PEASS/linPEAS/images"
 rm -f "${PATHSET}/PEASS/linPEAS/README.md"
+rm -f "${PATHSET}/PEASS/winPEAS/README.md"
 mv "${PATHSET}/PEASS/winPEAS/winPEASexe/binaries/x64/Release/winPEASx64.exe"  "${PATHSET}/PEASS/winPEAS/winPEASx64.exe"
 mv "${PATHSET}/PEASS/winPEAS/winPEASexe/binaries/x86/Release/winPEASx86.exe"  "${PATHSET}/PEASS/winPEAS/winPEASx86.exe"
 rm -r -f "${PATHSET}/PEASS/winPEAS/winPEASexe"
@@ -133,13 +134,13 @@ echo "$green Downloading stego-toolkit...done!$reset"
 
 ##python3 pip
 echo "$blue installing python3 pip...$reset"
-sudo apt install python3-pip
+sudo apt install python3-pip -y
 echo "$green installing python3 pip...done!$reset"
 
 ##rsactftool
 echo "$blue downloading rsaCTFtool...$reset"
 git clone https://github.com/Ganapati/RsaCtfTool.git "${PATHSET}/RsaCtfTool"
-sudo apt-get install libgmp3-dev libmpc-dev
+sudo apt-get install libgmp3-dev libmpc-dev -y
 pip3 install -r "${PATHSET}/RsaCtfTool/requirements.txt"
 sudo pip3 install pycryptodome
 sudo pip3 install egcd
@@ -148,15 +149,16 @@ echo "$green downloading rsaCTFtool pip...done!$reset"
 ##pwntools
 echo "$blue downloading pwntools...$reset"
 sudo apt-get update
-sudo apt-get install python3 python3-pip python3-dev git libssl-dev libffi-dev build-essential
+sudo apt-get install python3 python3-pip python3-dev git libssl-dev libffi-dev build-essential -y
 python3 -m pip install --upgrade pip
 python3 -m pip install --upgrade pwntools
 echo "$green downloading pwntools...done!$reset"
 
 ##open wappalyzer webpage
 echo "$blue Opening Wappalyzer extension in firefox click on Add to Firefox"
-firefox https://addons.mozilla.org/en-US/firefox/addon/wappalyzer/ 2>/dev/null
 echo "$red Close Firefox to continuie..$reset"
+firefox https://addons.mozilla.org/en-US/firefox/addon/wappalyzer/ 2>/dev/null
+
 
 ## ip monitor in taskbar for VM
 echo "$green All done!$reset"
