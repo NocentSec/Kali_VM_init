@@ -16,15 +16,13 @@ git clone https://github.com/ipv6-feet-under/Kali_VM_init\
 * create symlink to wordlists
 * unpacks rockyou
 * prompts to install wappalyzer
+* downloads rsactftool
+* downloads pwntools
 
 
 ## TODO:
 
-* link sublime text instead of mousepad
-* winPEAS/linPEAS without junk
+* add nice banner
 * add VM_ip  to taskbar automatically
-* add PwnTools
-* add RSAtools
 * make wappalyzer installation automatically
-* change keyboard layout to user input not to german
 * firefox bookmarks cleanen
