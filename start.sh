@@ -5,19 +5,20 @@ green=$(tput setaf 2)
 blue=$(tput setaf 6)
 reset=$(tput sgr0)
 
+echo "$red Which language would you like you keyboard layout to be?"
+select lang in "de" "en"; do
+    case $lang in
+        de ) LANG="de"; sudo timedatectl set-timezone Europe/Berlin;break;;
+        en ) LANG="en";break;;
+    esac
+done
 
 # change keyboard layout to german
-echo "$blue Setting your keyboard layout to german...$reset"
-setxkbmap -layout de
-echo "setxkbmap -layout de" >> "$HOME/.zshrc"
-echo "$green Setting your keyboard layout to german...done!$reset"
+echo "$blue Setting your keyboard layout...$reset"
+setxkbmap -layout $LANG
+echo "setxkbmap -layout $LANG" >> "$HOME/.zshrc"
+echo "$green Setting your keyboard layout...done!$reset"
 
-#update everything
-sudo apt update -y
-sudo apt dist-upgrade -y
-sudo apt upgrade -y
-
-#download scripts
 
 echo "$red Where do you want to save your scripts?"
 select script_path in "Home" "Desktop" "Documents" "Downloads"; do
@@ -30,6 +31,13 @@ select script_path in "Home" "Desktop" "Documents" "Downloads"; do
 done
 PATHSET="${PATHSET}Scripts";
 mkdir $PATHSET
+
+#update everything
+sudo apt update -y
+sudo apt dist-upgrade -y
+sudo apt upgrade -y
+
+#download scripts
 
 ##PEASS
 echo "$blue Downloading PEASS..."
@@ -86,6 +94,10 @@ sudo docker pull dominicbreuker/stego-toolkit
 echo "sudo docker run -it --rm -v $HOME/Downloads:/data dominicbreuker/stego-toolkit /bin/bash" > "${PATHSET}/stego-toolkit.sh"
 chmod +x "${PATHSET}/stego-toolkit.sh"
 echo "$green Downloading stego-toolkit...done!$reset"
+
+##toilet for lolz
+sudo apt install toilet -y
+toilet -f bigmono9 -F gay All done!
 
 ## ip monitor in taskbar for VM
 echo "$green add a new GenMon panel to your taskbar and make it display the output of this command: /bin/bash -c \"hostname -I | tail -1 | cut -d ' ' -f 3\""
