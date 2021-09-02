@@ -3,10 +3,9 @@
 red=$(tput setaf 196)
 green=$(tput setaf 34)
 blue=$(tput setaf 27)
-reset=$(tput setaf 234)
-reset_final=$(tput sgr0)
+reset=$(tput sgr0)
 
-echo "$red Which language would you like you keyboard layout to be?$reset"
+echo "$red Which language would you like you keyboard layout to be?"
 select lang in "de" "us"; do
     case $lang in
         de ) LANG="de"; sudo timedatectl set-timezone Europe/Berlin;break;;
@@ -21,7 +20,7 @@ echo "setxkbmap -layout $LANG" >> "$HOME/.zshrc"
 echo "$green Setting your keyboard layout...done!$reset"
 
 
-echo "$red Where do you want to save your scripts?$reset"
+echo "$red Where do you want to save your scripts?"
 select script_path in "Home" "Desktop" "Documents" "Downloads"; do
     case $script_path in
         Home ) PATHSET="$HOME/";break;;
@@ -44,22 +43,22 @@ sudo apt upgrade -y
 echo "$blue Downloading PEASS...$reset"
 mkdir "${PATHSET}/PEASS"
 git clone https://github.com/carlospolop/PEASS-ng "${PATHSET}/PEASS"
-rm -r "${PATHSET}/PEASS/build_lists"
-rm -r "${PATHSET}/PEASS/parser"
-rm "${PATHSET}/PEASS/CONTRIBUTING.md"
-rm "${PATHSET}/PEASS/LICENSE"
-rm "${PATHSET}/PEASS/README.md"
-rm -r "${PATHSET}/PEASS/linPEAS/builder"
-rm -r "${PATHSET}/PEASS/linPEAS/images"
-rm "${PATHSET}/PEASS/linPEAS/README.md"
+rm -r -f "${PATHSET}/PEASS/build_lists"
+rm -r -f "${PATHSET}/PEASS/parser"
+rm -f "${PATHSET}/PEASS/CONTRIBUTING.md"
+rm -f "${PATHSET}/PEASS/LICENSE"
+rm -f "${PATHSET}/PEASS/README.md"
+rm -r -f "${PATHSET}/PEASS/linPEAS/builder"
+rm -r -f "${PATHSET}/PEASS/linPEAS/images"
+rm -f "${PATHSET}/PEASS/linPEAS/README.md"
 mv "${PATHSET}/PEASS/winPEAS/winPEASexe/binaries/x64/Release/winPEASx64.exe"  "${PATHSET}/PEASS/winPEAS/winPEASx64.exe"
 mv "${PATHSET}/PEASS/winPEAS/winPEASexe/binaries/x86/Release/winPEASx86.exe"  "${PATHSET}/PEASS/winPEAS/winPEASx86.exe"
-rm -r "${PATHSET}/PEASS/winPEAS/winPEASexe"
+rm -r -f "${PATHSET}/PEASS/winPEAS/winPEASexe"
 mv "${PATHSET}/PEASS/winPEAS/winPEASbat/winPEAS.bat"  "${PATHSET}/PEASS/winPEAS/winPEAS.bat"
-rm -r "${PATHSET}/PEASS/winPEAS/winPEASbat"
-rm -r "${PATHSET}/PEASS/.git"
-rm -r "${PATHSET}/PEASS/.github"
-rm "${PATHSET}/PEASS/.gitignore"
+rm -r -f "${PATHSET}/PEASS/winPEAS/winPEASbat"
+rm -r -f "${PATHSET}/PEASS/.git"
+rm -r -f "${PATHSET}/PEASS/.github"
+rm -f "${PATHSET}/PEASS/.gitignore"
 echo "$green Downloading PEASS...done!$reset"
 
 ##rockyou and wordlists link
@@ -162,4 +161,4 @@ echo "$red Close Firefox to continuie..$reset"
 ## ip monitor in taskbar for VM
 echo "$green All done!$reset"
 echo "$green add a new GenMon panel to your taskbar and make it display the output of this command: $red/bin/bash -c \"hostname -I | tail -1 | cut -d ' ' -f 3\"$reset"
-echo "$green dont forget to run ngrok auth token thingy$reset_final"
+echo "$green dont forget to run ngrok auth token thingy$reset"
