@@ -14,7 +14,7 @@ We run this on a fresh kali vm
 
 ## TODO:
 
-* add VM_ip  to taskbar
+* add VM_ip  to taskbar automatically
 * add PwnTools
 * add RSAtools
 * make wappalyzer installation automatically
