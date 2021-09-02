@@ -20,8 +20,11 @@ git clone https://github.com/ipv6-feet-under/Kali_VM_init\
 
 ## TODO:
 
+* link sublime text instead of mousepad
+* winPEAS/linPEAS without junk
 * add VM_ip  to taskbar automatically
 * add PwnTools
 * add RSAtools
 * make wappalyzer installation automatically
 * change keyboard layout to user input not to german
+* firefox bookmarks cleanen
