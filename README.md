@@ -1,10 +1,10 @@
 # Kali_VM_init
 We run this on a fresh kali vm
 ```
-git clone https://github.com/ipv6-feet-under/Kali_VM_init\
-&& cd Kali_VM_init \
-&& chmod +x start.sh \
-&& ./start.sh
+git clone https://github.com/ipv6-feet-under/Kali_VM_init
+cd Kali_VM_init
+chmod +x start.sh
+./start.sh
 ```
 
 ## What it does:
