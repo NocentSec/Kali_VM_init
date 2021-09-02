@@ -1,15 +1,16 @@
 #!/bin/bash
 
-red=$(tput setaf 1)
-green=$(tput setaf 2)
-blue=$(tput setaf 6)
-reset=$(tput sgr0)
+red=$(tput setaf 196)
+green=$(tput setaf 34)
+blue=$(tput setaf 27)
+reset=$(tput setaf 234)
+reset_final=$(tput sgr0)
 
 echo "$red Which language would you like you keyboard layout to be?"
-select lang in "de" "en"; do
+select lang in "de" "us"; do
     case $lang in
         de ) LANG="de"; sudo timedatectl set-timezone Europe/Berlin;break;;
-        en ) LANG="en";break;;
+        en ) LANG="us";break;;
     esac
 done
 
@@ -40,7 +41,7 @@ sudo apt upgrade -y
 #download scripts
 
 ##PEASS
-echo "$blue Downloading PEASS..."
+echo "$blue Downloading PEASS...$reset"
 mkdir "${PATHSET}/PEASS"
 git clone https://github.com/carlospolop/PEASS-ng "${PATHSET}/PEASS"
 echo "$green Downloading PEASS...done!$reset"
@@ -50,11 +51,6 @@ echo "$blue Decompress rockyou and create symlink to wordlists..."
 sudo gzip -d /usr/share/wordlists/rockyou.txt.gz
 ln -s /usr/share/wordlists "${PATHSET}/wordlists"
 echo "$green Decompress rockyou and create symlink to wordlists...done!$reset"
-
-##open wappalyzer webpage
-echo "$blue Opening Wappalyzer extension in firefox click on Add to Firefox"
-firefox https://addons.mozilla.org/en-US/firefox/addon/wappalyzer/
-
 
 ##get postman
 echo "$blue Downloading postman..."
@@ -86,7 +82,6 @@ echo "$blue Downloading chisel..."
 curl https://i.jpillora.com/chisel! | sudo bash
 echo "$green Downloading chisel...done!$reset"
 
-
 ##stego-toolkit
 echo "$blue Downloading stego-toolkit..."
 sudo apt install docker.io -y
@@ -95,10 +90,12 @@ echo "sudo docker run -it --rm -v $HOME/Downloads:/data dominicbreuker/stego-too
 chmod +x "${PATHSET}/stego-toolkit.sh"
 echo "$green Downloading stego-toolkit...done!$reset"
 
-##toilet for lolz
-sudo apt install toilet -y
-toilet -f bigmono9 -F gay All done!
+##open wappalyzer webpage
+echo "$blue Opening Wappalyzer extension in firefox click on Add to Firefox"
+firefox https://addons.mozilla.org/en-US/firefox/addon/wappalyzer/
+echo "$red Close Firefox to continuie..$reset"
 
 ## ip monitor in taskbar for VM
-echo "$green add a new GenMon panel to your taskbar and make it display the output of this command: /bin/bash -c \"hostname -I | tail -1 | cut -d ' ' -f 3\""
-echo "$green dont forget to run ngrok auth token thingy"
+echo "$green All done!$reset"
+echo "$green add a new GenMon panel to your taskbar and make it display the output of this command: $red/bin/bash -c \"hostname -I | tail -1 | cut -d ' ' -f 3\"$reset"
+echo "$green dont forget to run ngrok auth token thingy$reset_final"
