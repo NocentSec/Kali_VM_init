@@ -102,6 +102,10 @@ echo "$green copying custom scripts...done!$reset"
 ##get SecLists
 echo "$blue Downloading SecLists...$reset"
 git clone https://github.com/danielmiessler/SecLists.git "${PATHSET}/SecLists"
+rm -f "${PATHSET}/SecLists/CONTRIBUTING.md"
+rm -f "${PATHSET}/SecLists/CONTRIBUTERS.md"
+rm -f "${PATHSET}/SecLists/LICENSE"
+rm -f "${PATHSET}/SecLists/README.md"
 echo "$green Downloading SecLists...done!$reset"
 
 ##rockyou and wordlists link
@@ -211,6 +215,9 @@ echo "$blue Opening Wappalyzer extension in firefox click on Add to Firefox"
 echo "$red Close Firefox to continuie..$reset"
 firefox https://addons.mozilla.org/en-US/firefox/addon/wappalyzer/ 2>/dev/null
 
+##change passwd
+echo "$red New password for user: $USER$reset"
+sudo passwd
 
 ## ip monitor in taskbar for VM
 echo "$green All done!$reset"
