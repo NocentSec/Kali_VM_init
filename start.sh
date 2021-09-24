@@ -94,11 +94,26 @@ rm -r -f "${PATHSET}/PEASS/.github"
 rm -f "${PATHSET}/PEASS/.gitignore"
 echo "$green Downloading PEASS...done!$reset"
 
+#custom scripts
+echo "$blue copying custom scripts...$reset"
+cp redirect.py "${PATHSET}/redirect.py"
+echo "$green copying custom scripts...done!$reset"
+
+##get SecLists
+echo "$blue Downloading SecLists...$reset"
+git clone https://github.com/danielmiessler/SecLists.git "${PATHSET}/SecLists"
+echo "$green Downloading SecLists...done!$reset"
+
 ##rockyou and wordlists link
 echo "$blue Decompress rockyou and create symlink to wordlists...$reset"
 sudo gzip -d /usr/share/wordlists/rockyou.txt.gz
 ln -s /usr/share/wordlists "${PATHSET}/wordlists"
 echo "$green Decompress rockyou and create symlink to wordlists...done!$reset"
+
+##ncat
+echo "$blue installing ncat...$reset"
+sudo apt install ncat -y
+echo "$green installing ncat...done!$reset"
 
 ##get postman
 echo "$blue Downloading postman...$reset"
@@ -107,6 +122,11 @@ tar -xzvf "/tmp/Postman" -C ${PATHSET}
 rm "/tmp/Postman"
 echo "$green Downloading postman...done!$reset"
 
+##google chrome
+echo "$blue Downloading chrome...$reset"
+wget -O "/tmp/chrome.deb" https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i "/tmp/chrome.deb"
+echo "$green Downloading chrome...done!$reset"
 
 ##sublime text
 echo "$blue Downloading sublime...$reset"

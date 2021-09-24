@@ -12,12 +12,14 @@ chmod +x start.sh
 * updates the system
 * changes keyboard layout to german
 * downloads winpeas and linpeas
-* installs stego-toolkit, postman, ngrok, sublime text, chisel
+* installs stego-toolkit, postman, ngrok, sublime text, chisel, google chrome
 * create symlink to wordlists
 * unpacks rockyou
 * prompts to install wappalyzer
 * downloads rsactftool
 * downloads pwntools
+* installs google chroe
+* downloads SecLists
 
 
 ## TODO:
