@@ -19,6 +19,7 @@ chmod +x start.sh
 * downloads rsactftool
 * downloads pwntools
 * downloads SecLists
+* reminds you to passwd
 
 
 ## TODO:
@@ -28,5 +29,4 @@ chmod +x start.sh
 * make wappalyzer installation automatically
 * firefox bookmarks cleanen
 * Kernel warning? 
-* Passwd new password
 * custom wallpaper/design etc
