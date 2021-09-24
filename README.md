@@ -30,4 +30,3 @@ chmod +x start.sh
 * Kernel warning? 
 * Passwd new password
 * custom wallpaper/design etc
-* 
