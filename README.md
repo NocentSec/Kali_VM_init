@@ -12,13 +12,12 @@ chmod +x start.sh
 * updates the system
 * changes keyboard layout to german
 * downloads winpeas and linpeas
-* installs stego-toolkit, postman, ngrok, sublime text, chisel, google chrome
+* installs stego-toolkit, postman, ngrok, sublime text, chisel, google chrome, ncat
 * create symlink to wordlists
 * unpacks rockyou
 * prompts to install wappalyzer
 * downloads rsactftool
 * downloads pwntools
-* installs google chroe
 * downloads SecLists
 
 
@@ -28,3 +27,7 @@ chmod +x start.sh
 * add VM_ip  to taskbar automatically
 * make wappalyzer installation automatically
 * firefox bookmarks cleanen
+* Kernel warning? 
+* Passwd new password
+* custom wallpaper/design etc
+* 
