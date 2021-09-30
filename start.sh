@@ -130,6 +130,7 @@ echo "$green Downloading postman...done!$reset"
 echo "$blue Downloading chrome...$reset"
 wget -O "/tmp/chrome.deb" https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i "/tmp/chrome.deb"
+sudo rm "/tmp/chrome.deb"
 echo "$green Downloading chrome...done!$reset"
 
 ##sublime text
@@ -214,6 +215,13 @@ echo "$green downloading pwntools...done!$reset"
 echo "$blue Opening Wappalyzer extension in firefox click on Add to Firefox"
 echo "$red Close Firefox to continuie..$reset"
 firefox https://addons.mozilla.org/en-US/firefox/addon/wappalyzer/ 2>/dev/null
+
+##install cloudflared
+echo "$blue Downloading cloudflared...$reset"
+wget -O '/tmp/cloudflared.deb' https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
+sudo dpkg -i "/tmp/cloudflared.deb"
+sudo rm "/tmp/cloudflared.deb"
+echo "$green Downloading cloudflared...done!$reset"
 
 ##change passwd
 echo "$red New password for user: $USER$reset"
