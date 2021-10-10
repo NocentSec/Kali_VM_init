@@ -123,7 +123,7 @@ echo "$blue""Downloading dependencies...$reset"
 ## downloading enumeration dependencies
   ## ffuf
 wget -O "/tmp/subdomains.txt" https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/DNS/subdomains-top1million-20000.txt >/dev/null 2>&1
-page_size=$(curl -so /dev/null http://bountyhunter.htb/ -w '%{size_download}')
+page_size=$(curl -so /dev/null "http://"$name".htb/" -w '%{size_download}')
   ## gobuster
 wget -O "/tmp/directories.txt" https://raw.githubusercontent.com/daviddias/node-dirbuster/master/lists/directory-list-2.3-medium.txt >/dev/null 2>&1
 
