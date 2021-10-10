@@ -119,6 +119,11 @@ echo "$blue installing ncat...$reset"
 sudo apt install ncat -y
 echo "$green installing ncat...done!$reset"
 
+##gobuster
+echo "$blue installing gobuster...$reset"
+sudo apt install gobuster -y
+echo "$green installing gobuster...done!$reset"
+
 ##get postman
 echo "$blue Downloading postman...$reset"
 wget -O "/tmp/Postman" https://dl.pstmn.io/download/latest/linux64 
