@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo printf "\e[0;2;0;0;0m                             \e[38;2;158;169;188m▄\e[0;2;0;0;0m\e[38;2;158;169;188m▄\e[0;2;0;0;0m\e[38;2;158;169;188m▄\e[0;2;0;0;0m                            \e[0m
+printf "\e[0;2;0;0;0m                             \e[38;2;158;169;188m▄\e[0;2;0;0;0m\e[38;2;158;169;188m▄\e[0;2;0;0;0m\e[38;2;158;169;188m▄\e[0;2;0;0;0m                            \e[0m
 \e[0;2;0;0;0m                          \e[38;2;158;169;188m▄\e[48;2;158;169;188m\e[38;2;0;0;0m▄\e[48;2;158;169;188m\e[38;2;0;0;0m▄\e[0;2;0;0;0m\e[38;2;141;189;248m▄\e[0;2;0;0;0m\e[38;2;141;189;248m▄\e[0;2;0;0;0m\e[38;2;141;189;248m▄\e[48;2;158;169;188m\e[38;2;0;0;0m▄\e[48;2;158;170;192m\e[38;2;78;84;93m▄\e[0;2;0;0;0m\e[38;2;158;169;188m▄\e[0;2;0;0;0m                         \e[0m
 \e[0;2;0;0;0m                        \e[48;2;158;169;188m \e[38;2;0;0;0m▄\e[0;2;0;0;0m\e[38;2;141;189;248m▄\e[48;2;141;189;248m\e[38;2;88;114;191m▄\e[48;2;88;114;191m    \e[48;2;141;189;248m\e[38;2;88;114;191m▄\e[0;2;0;0;0m\e[38;2;88;114;191m▄\e[0;2;0;0;0m\e[38;2;131;175;230m▄\e[48;2;158;169;188m\e[38;2;0;0;0m▄\e[0;2;0;0;0m\e[38;2;158;169;188m▄\e[0;2;0;0;0m                       \e[0m
 \e[0;2;0;0;0m                       \e[48;2;158;169;188m\e[38;2;125;134;149m▄\e[0;2;0;0;0m \e[48;2;141;189;248m\e[38;2;88;114;191m▄\e[48;2;88;114;191m\e[38;2;55;66;121m▄\e[48;2;88;114;191m \e[38;2;141;189;248m▄\e[48;2;88;114;191m \e[48;2;141;189;248m\e[38;2;88;114;191m▄\e[48;2;88;114;191m\e[38;2;141;189;248m▄\e[48;2;88;114;191m   \e[0;2;0;0;0m\e[38;2;141;189;248m▄\e[0;2;0;0;0m \e[38;2;158;169;188m▄\e[0;2;0;0;0m                      \e[0m
@@ -32,82 +32,27 @@ sudo printf "\e[0;2;0;0;0m                             \e[38;2;158;169;188m▄\e
 \e[0;2;0;0;0m                 \e[48;2;158;169;188m\e[38;2;0;0;0m▄\e[48;2;158;169;188m\e[38;2;0;0;0m▄\e[48;2;158;169;188m\e[38;2;0;0;0m▄\e[48;2;158;169;188m\e[38;2;0;0;0m▄\e[48;2;158;169;188m\e[38;2;0;0;0m▄\e[48;2;158;169;188m\e[38;2;0;0;0m▄\e[48;2;158;169;188m\e[38;2;0;0;0m▄\e[48;2;158;169;188m\e[38;2;0;0;0m▄\e[48;2;158;169;188m\e[38;2;0;0;0m▄\e[48;2;158;169;188m\e[38;2;0;0;0m▄\e[48;2;158;169;188m\e[38;2;0;0;0m▄\e[48;2;158;169;188m\e[38;2;0;0;0m▄\e[48;2;158;169;188m\e[38;2;0;0;0m▄\e[48;2;158;169;188m\e[38;2;0;0;0m▄\e[48;2;158;169;188m\e[38;2;0;0;0m▄\e[48;2;158;169;188m\e[38;2;0;0;0m▄\e[48;2;158;169;188m\e[38;2;0;0;0m▄\e[48;2;158;169;188m\e[38;2;0;0;0m▄\e[48;2;158;169;188m\e[38;2;0;0;0m▄\e[48;2;158;169;188m\e[38;2;0;0;0m▄\e[48;2;158;169;188m\e[38;2;0;0;0m▄\e[48;2;158;169;188m\e[38;2;0;0;0m▄\e[48;2;158;169;188m\e[38;2;0;0;0m▄\e[48;2;158;169;188m\e[38;2;0;0;0m▄\e[48;2;158;169;188m\e[38;2;0;0;0m▄\e[48;2;158;169;188m\e[38;2;0;0;0m▄\e[0;2;0;0;0m                 \e[0m
 ";
 
-## colors
 red=$(tput setaf 196)
 green=$(tput setaf 34)
 blue=$(tput setaf 27)
 reset=$(tput sgr0)
 
-programname=$0
-
-function usage {
-    echo "usage: $programname <ip adress> <name>"
-    echo "example usage: $programname 10.129.236.3 intelligence"
-    exit 1
-}
-
-function prompt_continue {
-	read -p "Do you want to continue anyways? [Y/n] " yn
-    case $yn in
-        [Yy]* ) :;;
-        * ) echo "Abort.";exit 1;;
+echo "$red Which language would you like you keyboard layout to be?"
+select lang in "de" "us"; do
+    case $lang in
+        de ) LANG="de"; sudo timedatectl set-timezone Europe/Berlin;break;;
+        en ) LANG="us";break;;
     esac
-}
+done
 
-[ -z $1 ] && { usage; }
-
-## check internet connection
-ping -c 1 1.1.1.1 -W 1 >/dev/null && : || (echo -e "$red""Network problems, please check your internet connection.$reset"; prompt_continue;)
-
-
-## check if valid ip and name
-if [[ $1 =~ ^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$ ]];
-then
-	ip=$1
-	if [[ $2 =~ [a-zA-Z]+$ ]];
-	then
-		name=$2
-	else
-		echo "$red""ERR: Please check your input.$reset"
-		usage;
-		exit 1
-	fi
-else
-	if [[ $1 =~ [a-zA-Z]+$ ]];
-	then
-		name=$1
-		if [[ $2 =~ ^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$ ]];
-		then
-			ip=$2
-		else
-			echo "$red""ERR: Please check your input.$reset"
-			usage;
-			exit 1
-		fi
-	else
-		echo "$red""ERR: Please check your input.$reset"
-		usage;
-		exit 1
-	fi
-fi
-
-echo "$green""IP and Name is correct."
-echo "ip: $ip"
-echo "name: $name"
-echo "$reset"
-
-## check if machine is reachable
-ping -c 1 $ip -W 1 >/dev/null && : || (echo "$red""Host seems to be down, please check your vpn connection.$reset"; prompt_continue;)
+# change keyboard layout to german
+echo "$blue Setting your keyboard layout...$reset"
+setxkbmap -layout $LANG
+echo "setxkbmap -layout $LANG" >> "$HOME/.zshrc"
+echo "$green Setting your keyboard layout...done!$reset"
 
 
-## add to hosts file
-sed "/$ip/d" /etc/hosts | sudo tee /etc/hosts > /dev/null;
-sed "/$name/d" /etc/hosts | sudo tee /etc/hosts > /dev/null;
-echo -e $ip"\t"$name".htb" | sudo tee -a /etc/hosts > /dev/null;
-
-
-## make directory on Desktop for new machine
-echo "$red""Where do you want to save your output?$reset"
+echo "$red Where do you want to save your scripts?"
 select script_path in "Home" "Desktop" "Documents" "Downloads"; do
     case $script_path in
         Home ) PATHSET="$HOME/";break;;
@@ -116,29 +61,178 @@ select script_path in "Home" "Desktop" "Documents" "Downloads"; do
         Downloads ) PATHSET="$HOME/Downloads/";break;;
     esac
 done
-PATHSET="${PATHSET}$name";
-mkdir $PATHSET > /dev/null 2>&1
+PATHSET="${PATHSET}Scripts";
+mkdir $PATHSET
 
-echo "$blue""Downloading dependencies...$reset"
-## downloading enumeration dependencies
-  ## ffuf
-wget -O "/tmp/subdomains.txt" https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/DNS/subdomains-top1million-20000.txt >/dev/null 2>&1
-page_size=$(curl -so /dev/null http://bountyhunter.htb/ -w '%{size_download}')
-  ## gobuster
-wget -O "/tmp/directories.txt" https://raw.githubusercontent.com/daviddias/node-dirbuster/master/lists/directory-list-2.3-medium.txt >/dev/null 2>&1
+#update everything
+sudo apt update -y
+sudo apt dist-upgrade -y
+sudo apt upgrade -y
 
-## Enumerating with different tools and scripts
-echo "$blue""Enumerating...$reset"
-(sudo nmap -sS -sV -sC $ip -oN $PATHSET/nmap.txt > /dev/null && echo -e "$green""\n════════════════════════════════════╣ PORTS AND SERVICES ╠════════════════════════════════════\n$reset" && cat $PATHSET/nmap.txt) &
-(ffuf -w /tmp/subdomains.txt -u "http://"$name".htb/" -H "Host: FUZZ."$name".htb" -fs $page_size -s -o $PATHSET/subdomains.md -of md >/dev/null 2>&1 && echo -e "$green""\n════════════════════════════════════╣ SUBDOMAINS ╠════════════════════════════════════\n$reset" && cat $PATHSET/subdomains.md) &
-(gobuster dir -w /tmp/directories.txt -u "http://"$name".htb/" -t 200 -x php,html -o $PATHSET/directories_n_files.txt  >/dev/null 2>&1 && echo -e "$green""\n════════════════════════════════════╣ DIRECTORIES & FILES ╠════════════════════════════════════\n$reset" && cat $PATHSET/directories_n_files.txt)
+#download scripts
+
+##PEASS
+echo "$blue Downloading PEASS...$reset"
+mkdir "${PATHSET}/PEASS"
+git clone https://github.com/carlospolop/PEASS-ng "${PATHSET}/PEASS"
+rm -r -f "${PATHSET}/PEASS/build_lists"
+rm -r -f "${PATHSET}/PEASS/parser"
+rm -f "${PATHSET}/PEASS/CONTRIBUTING.md"
+rm -f "${PATHSET}/PEASS/LICENSE"
+rm -f "${PATHSET}/PEASS/README.md"
+rm -r -f "${PATHSET}/PEASS/linPEAS/builder"
+rm -r -f "${PATHSET}/PEASS/linPEAS/images"
+rm -f "${PATHSET}/PEASS/linPEAS/README.md"
+rm -f "${PATHSET}/PEASS/winPEAS/README.md"
+mv "${PATHSET}/PEASS/winPEAS/winPEASexe/binaries/x64/Release/winPEASx64.exe"  "${PATHSET}/PEASS/winPEAS/winPEASx64.exe"
+mv "${PATHSET}/PEASS/winPEAS/winPEASexe/binaries/x86/Release/winPEASx86.exe"  "${PATHSET}/PEASS/winPEAS/winPEASx86.exe"
+rm -r -f "${PATHSET}/PEASS/winPEAS/winPEASexe"
+mv "${PATHSET}/PEASS/winPEAS/winPEASbat/winPEAS.bat"  "${PATHSET}/PEASS/winPEAS/winPEAS.bat"
+rm -r -f "${PATHSET}/PEASS/winPEAS/winPEASbat"
+rm -r -f "${PATHSET}/PEASS/.git"
+rm -r -f "${PATHSET}/PEASS/.github"
+rm -f "${PATHSET}/PEASS/.gitignore"
+echo "$green Downloading PEASS...done!$reset"
+
+#custom scripts
+echo "$blue copying custom scripts...$reset"
+cp redirect.py "${PATHSET}/redirect.py"
+echo "$green copying custom scripts...done!$reset"
+
+##get SecLists
+echo "$blue Downloading SecLists...$reset"
+git clone https://github.com/danielmiessler/SecLists.git "${PATHSET}/SecLists"
+rm -f "${PATHSET}/SecLists/CONTRIBUTING.md"
+rm -f "${PATHSET}/SecLists/CONTRIBUTORS.md"
+rm -f "${PATHSET}/SecLists/LICENSE"
+rm -f "${PATHSET}/SecLists/README.md"
+echo "$green Downloading SecLists...done!$reset"
+
+##rockyou and wordlists link
+echo "$blue Decompress rockyou and create symlink to wordlists...$reset"
+sudo gzip -d /usr/share/wordlists/rockyou.txt.gz
+ln -s /usr/share/wordlists "${PATHSET}/wordlists"
+echo "$green Decompress rockyou and create symlink to wordlists...done!$reset"
+
+##ncat
+echo "$blue installing ncat...$reset"
+sudo apt install ncat -y
+echo "$green installing ncat...done!$reset"
+
+##gobuster
+echo "$blue installing gobuster...$reset"
+sudo apt install gobuster -y
+echo "$green installing gobuster...done!$reset"
+
+##get postman
+echo "$blue Downloading postman...$reset"
+wget -O "/tmp/Postman" https://dl.pstmn.io/download/latest/linux64 
+tar -xzvf "/tmp/Postman" -C ${PATHSET}
+rm "/tmp/Postman"
+echo "$green Downloading postman...done!$reset"
+
+##google chrome
+echo "$blue Downloading chrome...$reset"
+wget -O "/tmp/chrome.deb" https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i "/tmp/chrome.deb"
+sudo rm "/tmp/chrome.deb"
+echo "$green Downloading chrome...done!$reset"
+
+##sublime text
+echo "$blue Downloading sublime...$reset"
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+sudo apt-get install apt-transport-https -y
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+sudo apt-get update -y
+sudo apt-get install sublime-text -y
+
+echo "[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Sublime Text
+GenericName=Text Editor
+Comment=Sophisticated text editor for code, markup and prose
+Exec=/opt/sublime_text/sublime_text %F
+Terminal=false
+MimeType=text/plain;
+Icon=sublime-text
+Categories=TextEditor;Development;
+StartupNotify=true
+Actions=new-window;new-file;
+X-XFCE-Source=file:///usr/share/applications/sublime_text.desktop
+
+[Desktop Action new-window]
+Name=New Window
+Exec=/opt/sublime_text/sublime_text --launch-or-new-window
+OnlyShowIn=Unity;
+
+[Desktop Action new-file]
+Name=New File
+Exec=/opt/sublime_text/sublime_text --command new_file
+OnlyShowIn=Unity;" > $HOME/.config/xfce4/panel/launcher-6/16224464981.desktop
+
+echo "$green Downloading sublime...done!$reset"
 
 
-wait $(jobs -p)
+##ngrok
+echo "$blue Downloading ngrok...$reset"
+wget -O "/tmp/ngrok.zip" https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+sudo unzip "/tmp/ngrok" -d "/usr/bin/"
+rm "/tmp/ngrok.zip"
+echo "$green Downloading ngrok...done!$reset"
 
-## deleting temporary files
-rm -f "/tmp/subdomains.txt"
+##chisel
+echo "$blue Downloading chisel...$reset"
+curl https://i.jpillora.com/chisel! | sudo bash
+echo "$green Downloading chisel...done!$reset"
 
-echo "$red""done$reset"
+##stego-toolkit
+echo "$blue Downloading stego-toolkit...$reset"
+sudo apt install docker.io -y
+sudo docker pull dominicbreuker/stego-toolkit
+echo "sudo docker run -it --rm -v $HOME/Downloads:/data dominicbreuker/stego-toolkit /bin/bash" > "${PATHSET}/stego-toolkit.sh"
+chmod +x "${PATHSET}/stego-toolkit.sh"
+echo "$green Downloading stego-toolkit...done!$reset"
 
-# alias htb='/home/kali/Desktop/htb_init.sh'
+##python3 pip
+echo "$blue installing python3 pip...$reset"
+sudo apt install python3-pip -y
+echo "$green installing python3 pip...done!$reset"
+
+##rsactftool
+echo "$blue downloading rsaCTFtool...$reset"
+git clone https://github.com/Ganapati/RsaCtfTool.git "${PATHSET}/RsaCtfTool"
+sudo apt-get install libgmp3-dev libmpc-dev -y
+pip3 install -r "${PATHSET}/RsaCtfTool/requirements.txt"
+sudo pip3 install pycryptodome
+sudo pip3 install egcd
+echo "$green downloading rsaCTFtool pip...done!$reset"
+
+##pwntools
+echo "$blue downloading pwntools...$reset"
+sudo apt-get update
+sudo apt-get install python3 python3-pip python3-dev git libssl-dev libffi-dev build-essential -y
+python3 -m pip install --upgrade pip
+python3 -m pip install --upgrade pwntools
+echo "$green downloading pwntools...done!$reset"
+
+##open wappalyzer webpage
+echo "$blue Opening Wappalyzer extension in firefox click on Add to Firefox"
+echo "$red Close Firefox to continuie..$reset"
+firefox https://addons.mozilla.org/en-US/firefox/addon/wappalyzer/ 2>/dev/null
+
+##install cloudflared
+echo "$blue Downloading cloudflared...$reset"
+wget -O '/tmp/cloudflared.deb' https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
+sudo dpkg -i "/tmp/cloudflared.deb"
+sudo rm "/tmp/cloudflared.deb"
+echo "$green Downloading cloudflared...done!$reset"
+
+##change passwd
+echo "$red New password for user: $USER$reset"
+sudo passwd
+
+## ip monitor in taskbar for VM
+echo "$green All done!$reset"
+echo "$green add a new GenMon panel to your taskbar and make it display the output of this command: $red/bin/bash -c \"hostname -I | tail -1 | cut -d ' ' -f 3\"$reset"
+echo "$green dont forget to run ngrok auth token thingy$reset"
