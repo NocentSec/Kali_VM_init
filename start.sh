@@ -25,6 +25,8 @@ done
 # change keyboard layout to german
 echo "$blue Setting your keyboard layout...$reset"
 setxkbmap -layout $LANG
+sudo sed -i '6s/.*/XKBLAYOUT="$LANG"/' /etc/default/keyboard
+sudo localectl set-x11-keymap $LANG
 echo "setxkbmap -layout $LANG" >> "$HOME/.zshrc"
 echo "$green Setting your keyboard layout...done!$reset"
 
