@@ -41,9 +41,9 @@ PATHSET="${PATHSET}Scripts";
 mkdir $PATHSET
 
 #update everything
-sudo apt update -y
-sudo apt dist-upgrade -y
-sudo apt upgrade -y
+sudo DEBIAN_FRONTEND=noninteractive apt update -yq
+sudo DEBIAN_FRONTEND=noninteractive apt dist-upgrade -yq
+sudo DEBIAN_FRONTEND=noninteractive apt upgrade -yq
 
 #export DEBIAN_FRONTEND=noninteractive
 
@@ -154,7 +154,7 @@ echo "$green Downloading sublime...done!$reset"
 
 ##vscode/code-oss
 echo "$blue Downloading vscode/code-oss...$reset"
-sudo DEBIAN_FRONTEND=noninteractive apt install code-oss
+sudo DEBIAN_FRONTEND=noninteractive apt install code-oss -yq
 echo "$green Downloading vscode/code-oss...done!$reset"
 
 ##ngrok
