@@ -152,6 +152,10 @@ OnlyShowIn=Unity;" > $HOME/.config/xfce4/panel/launcher-6/16224464981.desktop
 
 echo "$green Downloading sublime...done!$reset"
 
+##vscode/code-oss
+echo "$blue Downloading vscode/code-oss...$reset"
+sudo DEBIAN_FRONTEND=noninteractive apt install code-oss
+echo "$green Downloading vscode/code-oss...done!$reset"
 
 ##ngrok
 echo "$blue Downloading ngrok...$reset"
@@ -195,10 +199,15 @@ python3 -m pip install --upgrade pip
 python3 -m pip install --upgrade pwntools
 echo "$green downloading pwntools...done!$reset"
 
-##open wappalyzer webpage
+##open wappalyzer webpage in firefox
 echo "$blue Opening Wappalyzer extension in firefox click on Add to Firefox"
-echo "$red Close Firefox to continuie..$reset"
+echo "$red Close Firefox to continue..$reset"
 firefox https://addons.mozilla.org/en-US/firefox/addon/wappalyzer/ 2>/dev/null
+
+##open wappalyzer webpage in chrome
+echo "$blue Opening Wappalyzer extension in chrome click on Add"
+echo "$red Close Chrome to continue..$reset"
+google-chrome https://chrome.google.com/webstore/detail/wappalyzer/gppongmhjkpfnbhagpmjfkannfbllamg
 
 ##install cloudflared
 echo "$blue Downloading cloudflared...$reset"
@@ -210,11 +219,6 @@ echo "$green Downloading cloudflared...done!$reset"
 ##change passwd
 echo "$red New password for user: $USER$reset"
 passwd
-
-##install gobuster
-echo "$blue downloading gobuster...$reset"
-sudo DEBIAN_FRONTEND=noninteractive apt install gobuster -yq
-echo "$green downloading gobuster...done!$reset"
 
 ##NocentSec HTB Enumeration tool
 echo "$blue downloading NocentSec HTB Enumeration tool...$reset"
@@ -230,8 +234,6 @@ echo "$green downloading gdb...done!$reset"
 echo "$blue downloading edb-debugger...$reset"
 sudo DEBIAN_FRONTEND=noninteractive apt install edb-debugger -yq
 echo "$green downloading edb-debugger...done!$reset"
-
-
 
 ## ip monitor in taskbar for VM
 echo "$green All done!$reset"
