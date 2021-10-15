@@ -47,8 +47,6 @@ sudo DEBIAN_FRONTEND=noninteractive apt update -yq
 sudo DEBIAN_FRONTEND=noninteractive apt dist-upgrade -yq
 sudo DEBIAN_FRONTEND=noninteractive apt upgrade -yq
 
-#export DEBIAN_FRONTEND=noninteractive
-
 #download scripts
 
 ##PEASS
