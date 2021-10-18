@@ -30,7 +30,7 @@ sudo localectl set-x11-keymap $LANG
 echo "setxkbmap -layout $LANG" >> "$HOME/.zshrc"
 echo "$green Setting your keyboard layout...done!$reset"
 
-echo "$red Where do you want to save your scripts?"
+echo "$red Where do you want to save your scripts?$reset"
 select script_path in "Home" "Desktop" "Documents" "Downloads"; do
     case $script_path in
         Home ) PATHSET="$HOME/";break;;
@@ -249,9 +249,9 @@ echo "$green downloading edb-debugger...done!$reset"
 ##ipacket
 echo "$blue installing impacket...$reset"
 wget -O "${PATHSET}/impacket.tar.gz" https://github.com/SecureAuthCorp/impacket/releases/download/impacket_0_9_23/impacket-0.9.23.tar.gz
-tar -xvf "${PATHSET}/impacket.tar.gz"
+tar -xvf "${PATHSET}/impacket.tar.gz" -C "${PATHSET}/impacket"
 rm -f "${PATHSET}/impacket.tar.gz"
-python3 -m pip install /home/kali/Desktop/Scripts/impacket-0.9.23
+python3 -m pip install /home/kali/Desktop/Scripts/impacket
 echo "$green installing impacket...done!$reset"
 
 ## ip monitor in taskbar for VM
