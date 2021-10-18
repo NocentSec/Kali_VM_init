@@ -87,6 +87,11 @@ rm -f "${PATHSET}/SecLists/LICENSE"
 rm -f "${PATHSET}/SecLists/README.md"
 echo "$green Downloading SecLists...done!$reset"
 
+##get IntruderPayloads
+echo "$blue Downloading IntruderPayloads...$reset"
+git clone https://github.com/1N3/IntruderPayloads "${PATHSET}/IntruderPayloads"
+echo "$green Downloading IntruderPayloads...done!$reset"
+
 ##rockyou and wordlists link
 echo "$blue Decompress rockyou and create symlink to wordlists...$reset"
 sudo gzip -d /usr/share/wordlists/rockyou.txt.gz
@@ -230,10 +235,24 @@ echo "$blue downloading gdb...$reset"
 sudo DEBIAN_FRONTEND=noninteractive apt install gdb -yq
 echo "$green downloading gdb...done!$reset"
 
+##gdb-peda
+echo "$blue downloading gdb-peda...$reset"
+git clone https://github.com/longld/peda.git ~/peda
+echo "source ~/peda/peda.py" >> ~/.gdbinit
+echo "$green downloading gdb-peda...done!$reset"
+
 ##edb-debugger
 echo "$blue downloading edb-debugger...$reset"
 sudo DEBIAN_FRONTEND=noninteractive apt install edb-debugger -yq
 echo "$green downloading edb-debugger...done!$reset"
+
+##ipacket
+echo "$blue installing impacket...$reset"
+wget -O "${PATHSET}/impacket.tar.gz" https://github.com/SecureAuthCorp/impacket/releases/download/impacket_0_9_23/impacket-0.9.23.tar.gz
+tar -xvf "${PATHSET}/impacket.tar.gz"
+rm -f "${PATHSET}/impacket.tar.gz"
+python3 -m pip install /home/kali/Desktop/Scripts/impacket-0.9.23
+echo "$green installing impacket...done!$reset"
 
 ## ip monitor in taskbar for VM
 echo "$green All done!$reset"
